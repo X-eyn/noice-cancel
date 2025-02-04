@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>DeepFilterNet Audio Enhancer</title>
+  </head>
+  <body>
+    <h1>Upload a 48kHz .wav File for Noise Reduction</h1>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul style="color:red;">
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <form method="post" enctype="multipart/form-data">
+      <input type="file" name="file" accept=".wav" required>
+      <input type="submit" value="Upload and Enhance">
+    </form>
+  </body>
+</html>
